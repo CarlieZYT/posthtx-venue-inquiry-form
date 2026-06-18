@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POST Venue Rental — Inquiry Form (preview)</title>
+
+  <!-- POST brand font: Adobe Fonts kit (neue-haas-grotesk-display).
+       Same kit the live posthtx.com site loads. In Webflow this is already
+       injected site-wide via Project Settings → Fonts, so the embed doesn't
+       need this link — it's here only so the standalone preview renders right. -->
+  <link rel="stylesheet" href="https://use.typekit.net/wnx0ooa.css">
+
+  <!-- Local preview path. In production these are referenced from the CDN:
+       https://cdn.lovettgroup.com/posthtx/venuerental/css/inquiry-form.css?v0.1
+
+       PREVIEW MUST BE SERVED OVER HTTP (not file://) — the app fetches
+       data/venues.json, which browsers block on file://. From src/ run:
+         python3 -m http.server 8765
+       then open http://localhost:8765/index.html -->
+  <link rel="stylesheet" href="css/inquiry-form.css">
+
+  <!-- Page chrome for the standalone preview only (not part of the embed).
+       Dark full-height page so the form's dark theme fills the viewport. -->
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { background: #0c0c0d; padding: 32px; }
+    @media screen and (max-width: 600px) { body { padding: 0; } }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Mount point. This single div is what gets embedded in Webflow. ===== -->
+  <div data-pvr-root></div>
+
+  <!-- Load order matters: config + adapter BEFORE the app. -->
+  <script src="js/config.js"></script>
+  <script src="js/integrations/event-temple.js"></script>
+  <script src="js/inquiry-form.js"></script>
+</body>
+</html>

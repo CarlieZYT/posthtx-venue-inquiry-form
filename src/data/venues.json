@@ -1,0 +1,182 @@
+{
+  "_note": "Venue catalog for the POST venue-rental inquiry form. Source of truth for venue content; swap this file for a CMS/API endpoint returning the same shape (see config.dataSources.venues). Feature data from Figma 'POST Web Update structure 3.6'.",
+  "venues": [
+    {
+      "id": "office",
+      "name": "The Office",
+      "sqft": "35,500 sq ft",
+      "maxCapacity": 3000,
+      "seatedDining": 1750,
+      "scale": "Large",
+      "features": {
+        "rooftop": false,
+        "outdoor": false,
+        "pvtBathroom": true,
+        "cateringKitchen": false,
+        "builtInAV": false
+      },
+      "bestFor": "Conferences · markets · production",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207ccf_The-office-cover.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6794305097cb8903dc299fa1_CMS_0933_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67943050d65025c48eb7fa37_M4MHoustonJune2024-673_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67943050695cfbd6d223993a_UNICEF.%20HEARTSTRINGS.628_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207ccd_Office%205-2400w.jpg"
+      ]
+    },
+    {
+      "id": "x-atrium",
+      "name": "X Atrium",
+      "sqft": "12,760 sq ft",
+      "maxCapacity": 2000,
+      "seatedDining": 700,
+      "scale": "Large",
+      "features": {
+        "rooftop": false,
+        "outdoor": false,
+        "pvtBathroom": false,
+        "cateringKitchen": false,
+        "builtInAV": false
+      },
+      "bestFor": "Galas · wedding receptions · brand launches",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207b93_x-atirum-4.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207cf0_LVxPOST_031924.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6794279899275dc937ff8b25_Hines_3.6.2024_Hines%20Conference_Photographer%20Melissa%20Taylor-363_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6794270d2506e82a7522db7e_10_OMA_POST%20Houston_Photography%20by%20Leonid%20Furmansky_web.webp"
+      ]
+    },
+    {
+      "id": "penthouse",
+      "name": "Penthouse",
+      "sqft": "7,500 sq ft",
+      "maxCapacity": 497,
+      "seatedDining": 300,
+      "scale": "Medium",
+      "features": {
+        "rooftop": true,
+        "outdoor": false,
+        "pvtBathroom": true,
+        "cateringKitchen": true,
+        "builtInAV": false
+      },
+      "bestFor": "Galas · weddings · soirées",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6862b64771e5bfad1f68286c_Penthouse-3.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/69710eadbe9a1e1cc568e133_%C2%A9PamAshleyPhoto_RPM_Chef_For_Paws-896.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/69710ead4f719ab0777643ba_%C2%A9PamAshleyPhoto_RPM_Chef_For_Paws-337.webp"
+      ]
+    },
+    {
+      "id": "outpost",
+      "name": "Outpost",
+      "sqft": "5,400 sq ft",
+      "maxCapacity": 450,
+      "seatedDining": 300,
+      "scale": "Medium",
+      "features": {
+        "rooftop": true,
+        "outdoor": "partial",
+        "pvtBathroom": false,
+        "cateringKitchen": false,
+        "builtInAV": false
+      },
+      "bestFor": "Weddings · galas · parties",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6794166c509599182a8b75e3_EM_457_3330_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6794166db5b482c83c84c6a2_GAZ09288%20-%20Small_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207cc8_outpost-.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67941aa115499aabd5ab71a7_134_ROCODinner_DOrtizPhoto_092421_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207b6a_venue_outpost-2.jpg"
+      ]
+    },
+    {
+      "id": "skylawn-room",
+      "name": "Skylawn Room",
+      "sqft": "5,100 sq ft",
+      "maxCapacity": 344,
+      "seatedDining": 270,
+      "scale": "Intimate",
+      "features": {
+        "rooftop": true,
+        "outdoor": false,
+        "pvtBathroom": false,
+        "cateringKitchen": false,
+        "builtInAV": true
+      },
+      "bestFor": "Corporate · collaboration · intimate dining",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/69c44fca0849daab39ff24e0_SkylawnRoom-4.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/69c44fcbb04adb972f481a89_SkylawnRoom-5.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/69c44fcaa80695954caf3f2f_SkylawnRoom-3.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/69c44fcbb4cbdcd150d1b4b3_SkylawnRoom-1.webp"
+      ]
+    },
+    {
+      "id": "art-club",
+      "name": "Art Club",
+      "sqft": "3,725 sq ft",
+      "maxCapacity": 575,
+      "seatedDining": 230,
+      "scale": "Intimate",
+      "features": {
+        "rooftop": false,
+        "outdoor": false,
+        "pvtBathroom": true,
+        "cateringKitchen": false,
+        "builtInAV": true
+      },
+      "bestFor": "Immersive events · receptions · art openings",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67abe52caa3031161bce0726_ArtClub_LovettParty_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67abe71eaa3031161bcff4a4_External-2_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/684b336786fce34376590f58_ARTCLUB_Event-69_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67abe6f8b2f58373e2887a62_Polynode-1_web.webp"
+      ]
+    },
+    {
+      "id": "jordan-plaza",
+      "name": "Jordan Plaza",
+      "sqft": "28,600 sq ft",
+      "maxCapacity": null,
+      "seatedDining": null,
+      "scale": "Large",
+      "features": {
+        "rooftop": false,
+        "outdoor": true,
+        "pvtBathroom": false,
+        "cateringKitchen": false,
+        "builtInAV": false
+      },
+      "bestFor": "Concerts · markets · public art · street events",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/679408fd5121ae80360bc558_FlysAbunch-PostHTX-DJI_0253-EDIT_web.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/679408fdecf3e86864abddb5_MyTexasJourney%20-%20Barbara%2031_web.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67eea6f86c982f2b860e8a7f_20250318_POST_Plaza-04_web.jpg",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/679408fda9e8e0d8f1522c6e_20240425_POST_PuppiesonthePlaza-099-2400w.jpg"
+      ]
+    },
+    {
+      "id": "docks",
+      "name": "The Docks",
+      "sqft": "11,448 sq ft",
+      "maxCapacity": null,
+      "seatedDining": null,
+      "scale": "Medium",
+      "features": {
+        "rooftop": false,
+        "outdoor": "partial",
+        "pvtBathroom": false,
+        "cateringKitchen": false,
+        "builtInAV": false
+      },
+      "bestFor": "Markets · DJ sets · festivals",
+      "imgs": [
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67981c4183474c8eec437c85_DOCKS%20MARKET.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67eea58ab723c2b6c3f52692_DockPOST-7_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/67eea58a70214eb71b0a9689_DockPOST-18_web.webp",
+        "https://cdn.prod.website-files.com/66abe0a90447f50739207a12/66abe0a90447f50739207cd3_Juneteenth_PostHTX_MarcoFromHouston__11_of_23__fisdft.webp"
+      ]
+    }
+  ]
+}

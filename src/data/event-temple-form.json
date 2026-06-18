@@ -1,0 +1,304 @@
+{
+  "_note": "Reference only. Live schema of Event Temple 'Outpost Inquiry Form' (lead_intake_form_setting 2607). Fetched for field matching. Submit endpoint: POST /lead_intakes/create with params {subdomain, leadIntakeFormSettingId, lead:{...}, contact:{...}}. field_id is the dotted payload path; booking.custom_field.<hash> for custom fields.",
+  "form_name": "Outpost Inquiry Form",
+  "lead_intake_form_setting_id": 2607,
+  "subdomain_token": "8305de3c3974b90caa58e923a890aa3c",
+  "submit_endpoint": "/lead_intakes/create",
+  "button_color": "#0016c1",
+  "fields": [
+    {
+      "kind": "header",
+      "label": "Plan an event with POST"
+    },
+    {
+      "kind": "field",
+      "label": "First Name",
+      "field_name": "First Name",
+      "field_type": "string",
+      "required": true,
+      "model_class": "contact",
+      "field_id": "contact.first_name",
+      "custom_field_id": null,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Last Name",
+      "field_name": "Last Name",
+      "field_type": "string",
+      "required": true,
+      "model_class": "contact",
+      "field_id": "contact.last_name",
+      "custom_field_id": null,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Company or Organization",
+      "field_name": "Company or Organization",
+      "field_type": "string",
+      "required": false,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.f77c3ed8ad4ea21c03e53ae8ae0ecc09",
+      "custom_field_id": 26110,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Email",
+      "field_name": "Email",
+      "field_type": "string",
+      "required": true,
+      "model_class": "contact",
+      "field_id": "contact.email",
+      "custom_field_id": null,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Phone Number",
+      "field_name": "Phone Number",
+      "field_type": "string",
+      "required": true,
+      "model_class": "contact",
+      "field_id": "contact.phone_number",
+      "custom_field_id": null,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Event Date",
+      "field_name": "Start Date",
+      "field_type": "date",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.start_date",
+      "custom_field_id": null,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Second Date Option",
+      "field_name": "Second Date Option",
+      "field_type": "date",
+      "required": false,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.ec01dc3d1ebf5cb0b7db47bb3afedbf5",
+      "custom_field_id": 13761,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Event Name (i.e. 2024 Gala or Smith-Nguyen Wedding)",
+      "field_name": "Booking Name",
+      "field_type": "string",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.name",
+      "custom_field_id": null,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Booking Type",
+      "field_name": "Booking Type",
+      "field_type": "picklist",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.booking_type_id",
+      "custom_field_id": null,
+      "options": [
+        {
+          "id": 46953,
+          "label": "Meeting"
+        },
+        {
+          "id": 46963,
+          "label": "Entertainment"
+        },
+        {
+          "id": 46964,
+          "label": "Reunion"
+        },
+        {
+          "id": 46955,
+          "label": "Corporate"
+        },
+        {
+          "id": 46959,
+          "label": "Holiday Party"
+        },
+        {
+          "id": 46957,
+          "label": "Tour"
+        },
+        {
+          "id": 46960,
+          "label": "Funeral/Wake"
+        },
+        {
+          "id": 46958,
+          "label": "Internal Use"
+        },
+        {
+          "id": 46961,
+          "label": "Social"
+        },
+        {
+          "id": 46962,
+          "label": "Prom"
+        },
+        {
+          "id": 46954,
+          "label": "Wedding"
+        },
+        {
+          "id": 46956,
+          "label": "Sports Group"
+        }
+      ]
+    },
+    {
+      "kind": "field",
+      "label": "Estimated Guest Count",
+      "field_name": "Guest Count",
+      "field_type": "number",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.cdcc1bbe8413decf6ea062cb36ce1c55",
+      "custom_field_id": 26109,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Estimated Event Budget (includes Venue, Food & Beverage, A/V, Decor, etc.)",
+      "field_name": "Event Budget",
+      "field_type": "picklist",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.e51c94e3a25d7ddeca7414233722d1ba",
+      "custom_field_id": 26111,
+      "options": [
+        {
+          "id": 18077,
+          "label": "< $10,000"
+        },
+        {
+          "id": 18072,
+          "label": "$10,000 - $20,000"
+        },
+        {
+          "id": 18073,
+          "label": "$21,000 - $30,000"
+        },
+        {
+          "id": 18074,
+          "label": "$31,000 - $40,000"
+        },
+        {
+          "id": 18075,
+          "label": "$41,000 - $50,000"
+        },
+        {
+          "id": 18076,
+          "label": "> $50,000"
+        }
+      ]
+    },
+    {
+      "kind": "field",
+      "label": "Additional Event Information",
+      "field_name": "Booking Details",
+      "field_type": "textarea",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.57f22b68865368147d5b01db96d28151",
+      "custom_field_id": 26233,
+      "options": null
+    },
+    {
+      "kind": "field",
+      "label": "Role of Inquirer",
+      "field_name": "Role of Inquirer",
+      "field_type": "picklist",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.b15f01c8e506d79812880ddf4b1dca39",
+      "custom_field_id": 13759,
+      "options": [
+        {
+          "id": 10841,
+          "label": "Bride/Groom"
+        },
+        {
+          "id": 10842,
+          "label": "Planner"
+        },
+        {
+          "id": 10843,
+          "label": "Family Member"
+        },
+        {
+          "id": 10844,
+          "label": "Party Host"
+        },
+        {
+          "id": 10845,
+          "label": "Other"
+        }
+      ]
+    },
+    {
+      "kind": "field",
+      "label": "Preferred Method of Contact",
+      "field_name": "Preferred Method of Contact",
+      "field_type": "picklist",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.ff1e5f9274852809af1a85f1232acd1c",
+      "custom_field_id": 13762,
+      "options": [
+        {
+          "id": 10850,
+          "label": "Email"
+        },
+        {
+          "id": 10851,
+          "label": "Phone"
+        }
+      ]
+    },
+    {
+      "kind": "field",
+      "label": "How did you hear about us?",
+      "field_name": "How did you hear about us?",
+      "field_type": "picklist",
+      "required": true,
+      "model_class": "lead",
+      "field_id": "booking.custom_field.5f21ebc086d552c61efa726043d7b89d",
+      "custom_field_id": 13758,
+      "options": [
+        {
+          "id": 10836,
+          "label": "Social Media"
+        },
+        {
+          "id": 10837,
+          "label": "POST website"
+        },
+        {
+          "id": 10838,
+          "label": "Friend/Referral"
+        },
+        {
+          "id": 10839,
+          "label": "Search Engine"
+        },
+        {
+          "id": 10840,
+          "label": "Other"
+        }
+      ]
+    }
+  ]
+}
