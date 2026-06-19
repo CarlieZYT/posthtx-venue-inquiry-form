@@ -345,7 +345,8 @@
         '<div class="nav-row">' +
           (isFirst ? '' : '<button type="button" class="btn-back" data-back>← Back</button>') +
           (isLast
-            ? '<span class="nav-hint">Review your summary →</span>'
+            ? '<button type="button" class="submit-btn nav-submit" data-step-submit' + (allStepsValid() ? '' : ' disabled') + '>' + esc(copy.submitLabel || 'Submit inquiry →') + '</button>' +
+              '<span class="nav-hint">Review your summary →</span>'
             : '<button type="button" class="btn-next" data-next' + (stepValid(step) ? '' : ' disabled') + '>' + esc(isFirst && step.cta ? step.cta : 'Continue') + '</button>') +
         '</div>';
 
@@ -355,6 +356,8 @@
     function refreshNext() {
       var b = el.stepCard.querySelector('[data-next]');
       if (b) b.disabled = !stepValid(currentStep());
+      var s = el.stepCard.querySelector('[data-step-submit]');   // last-step desktop submit
+      if (s) s.disabled = !allStepsValid();
     }
 
     /* ===================== values + validation ===================== */
@@ -434,6 +437,8 @@
     function submitInquiry() {
       if (!allStepsValid()) return;
       el.summarySubmit.disabled = true;
+      var stepSubmit = el.stepCard.querySelector('[data-step-submit]');
+      if (stepSubmit) stepSubmit.disabled = true;
       Promise.resolve(ET.submit(buildPayload(false))).then(function (res) {
         if (res && res.ok) {
           if (res.stub) { state.view = 'done'; showView(); updateSummary(); }   // preview: don't navigate away
@@ -599,6 +604,10 @@
       el.stepCard.addEventListener('click', function (e) {
         if (e.target.closest('[data-next]')) return nextStep();
         if (e.target.closest('[data-back]')) return prevStep();
+        if (e.target.closest('[data-step-submit]')) return submitInquiry();
+        // Whole date field opens the calendar (not just the icon); typing still works.
+        var dateInput = e.target.closest('input[type="date"]');
+        if (dateInput && typeof dateInput.showPicker === 'function') { try { dateInput.showPicker(); } catch (_) {} return; }
         var dm = e.target.closest('[data-dm-mode]'); if (dm) return setDateMode(dm.getAttribute('data-dm-field'), dm.getAttribute('data-dm-mode'));
         var opt2 = e.target.closest('[data-opt-field]'); if (opt2) return handleOpt(opt2.getAttribute('data-opt-field'), opt2.getAttribute('data-opt-val'), opt2.getAttribute('data-opt-kind'));
       });

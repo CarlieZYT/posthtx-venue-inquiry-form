@@ -152,6 +152,7 @@
 .pvr .q-input:focus { border-color: var(--accent); }
 .pvr .q-input::placeholder { color: var(--text-faint); }
 .pvr .q-input[hidden] { display: none; }
+.pvr .q-input[type="date"] { cursor: pointer; }   /* whole field opens the picker */
 .pvr .q-input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); opacity: .6; cursor: pointer; }
 .pvr .q-select {
   appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 34px;
@@ -178,6 +179,9 @@
 .pvr .nav-row { display: flex; gap: var(--sp3); margin-top: auto; padding-top: var(--sp6); align-items: center; justify-content: space-between; }
 .pvr .btn-next, .pvr .btn-back { padding: 13px 24px; font-size: 15px; }
 .pvr .nav-hint { font-size: 14px; color: var(--text-soft); font-style: italic; }
+/* last-step submit living in the builder nav-row (desktop): compact, right-aligned
+   — overrides the full-width summary-panel .submit-btn. Hidden on mobile with .nav-row. */
+.pvr .submit-btn.nav-submit { width: auto; margin-top: 0; padding: 13px 24px; font-size: 15px; flex-shrink: 0; }
 
 /* done */
 .pvr .display-xl { font-size: 38px; color: var(--text); font-weight: var(--fw-bold); line-height: 1.15; }

@@ -46,7 +46,7 @@
       reviewBlurb: 'Give everything a once-over. Edit any line, then submit.',
       submitLabel: 'Submit inquiry →',
       doneTitle: "You're all set",
-      doneBlurb: 'Your inquiry has been submitted. A POST events coordinator will respond within 24 hours.'
+      doneBlurb: 'Your inquiry has been submitted. A POST events coordinator will reach out to you soon.'
     },
 
     /* ----- BUILD steps (in order) ---------------------------------------- */
