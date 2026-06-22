@@ -54,6 +54,8 @@
   --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px; --sp5: 20px; --sp6: 24px; --sp7: 32px; --sp8: 40px;
 
   width: 100%;
+  box-sizing: border-box;
+  padding: 32px;            /* component-owned gutter (so it never touches edges, embed or preview) */
   font-family: var(--font);
   font-size: 16px;
   font-weight: var(--fw);
@@ -294,7 +296,7 @@
   .pvr .q-text { font-size: 26px; }
 }
 @media screen and (max-width: 991px) {
-  .pvr { padding-bottom: 72px; }
+  .pvr { padding: 16px 16px 84px; }   /* tighter gutter on mobile + room for the sticky bar */
   .pvr .app { grid-template-columns: 1fr; }
   .pvr .panel-left { order: 1; }
   .pvr .panel-mid { order: 2; }
