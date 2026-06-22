@@ -67,7 +67,7 @@
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ============================ TOP BAR ============================ */
-.pvr .pvr-topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--sp4); margin-bottom: var(--sp6); flex-wrap: wrap; }
+.pvr .pvr-topbar { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp3); margin-bottom: var(--sp6); }
 .pvr .pvr-logo { display: inline-flex; align-items: center; color: var(--text); text-decoration: none; transition: color .12s; }
 .pvr .pvr-logo svg { height: 26px; width: auto; display: block; }
 .pvr .pvr-logo:hover { color: var(--text-soft); }
