@@ -27,14 +27,19 @@
 
     options: {
       captureLeadEarly: true,      // fire a partial lead once name + email are valid
-      maxPreferredVenues: 3        // venue is a PREFERENCE; "No preference" is allowed
+      maxPreferredVenues: 3,       // venue is a PREFERENCE; "No preference" is allowed
+      showTopBar: true             // logo + back link on top; set false for the Webflow embed (page already has POST's header)
     },
 
     // Where a successful submit sends the visitor (production). Preview shows the
     // "all set" screen instead of navigating away.
     successUrl: 'https://www.posthtx.com/venuerental-success',
 
+    // Top-bar logo + back link target (the POST venue-rental page).
+    backUrl: 'https://www.posthtx.com/venuerental',
+
     copy: {
+      backLabel: '← Explore more at POST',
       heroTitle: 'HOST YOUR EVENT AT POST',
       heroBlurb: "Tell us about your event and rank the spaces you love — our events team takes it from there.",
       venuePanelTitle: 'Preferred spaces — rank up to 3',

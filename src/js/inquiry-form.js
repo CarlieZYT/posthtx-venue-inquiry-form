@@ -16,6 +16,12 @@
 
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
+  // POST wordmark (from posthtx CDN), recolored via fill:currentColor so it
+  // follows the theme text color.
+  var POST_LOGO = '<svg viewBox="0 0 361 108" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">' +
+    '<path d="M0.0483909 105.4H13.0084V62.2H41.0884C63.5524 62.2 74.3524 50.824 74.3524 31.96C74.3524 24.184 71.7604 17.416 67.4404 12.376C62.1124 6.03999 53.7604 2.43999 42.9604 2.43999H0.0483909V105.4ZM13.0084 13.672H40.8004C53.9044 13.672 61.5364 20.152 61.5364 32.536C61.5364 44.344 54.6244 51.688 40.0804 51.688H13.0084V13.672ZM134.732 107.56C165.836 107.56 185.132 84.664 185.132 53.848C185.132 23.032 165.836 0.135993 134.732 0.135993C103.628 0.135993 84.3323 23.032 84.3323 53.848C84.3323 84.664 103.628 107.56 134.732 107.56ZM134.732 96.184C110.54 96.184 97.5803 78.04 97.5803 53.848C97.5803 29.656 110.54 11.368 134.732 11.368C158.924 11.368 171.884 29.656 171.884 53.848C171.884 78.04 158.924 96.184 134.732 96.184ZM238.02 107.416C260.196 107.416 275.892 96.616 275.892 77.32C275.892 54.136 257.604 49.24 237.588 45.208C222.18 42.184 210.66 38.728 210.66 27.064C210.66 16.408 219.876 10.504 233.844 10.504C248.964 10.504 258.468 17.848 260.34 32.536H272.58C269.988 13.528 259.332 0.423989 233.556 0.423989C212.676 0.423989 198.564 10.648 198.564 27.64C198.564 47.08 214.116 52.264 232.26 56.296C250.692 60.328 263.076 63.64 263.076 77.752C263.076 90.568 252.852 97.048 238.596 97.048C219.156 97.048 208.5 87.976 206.772 70.552H194.1C195.252 91.288 209.076 107.416 238.02 107.416ZM279.178 13.816H313.45V105.4H326.41V13.816H360.682V2.43999H279.178V13.816Z" fill="currentColor"/>' +
+    '</svg>';
+
   function init() {
     var root = d.querySelector('[data-pvr-root]');
     if (!root) return;
@@ -80,8 +86,16 @@
     /* ===================== shell ===================== */
     function buildShell() {
       root.classList.add('pvr');
+      var backUrl = cfg.backUrl || '';
+      var topbar = (opt.showTopBar !== false && backUrl)
+        ? '<div class="pvr-topbar">' +
+            '<a class="pvr-logo" href="' + esc(backUrl) + '" aria-label="POST Houston">' + POST_LOGO + '</a>' +
+            '<a class="pvr-back" href="' + esc(backUrl) + '">' + esc(copy.backLabel || '← Explore more at POST') + '</a>' +
+          '</div>'
+        : '';
       root.innerHTML =
         '<h2 class="sr-only">POST Houston event inquiry — rank your preferred spaces and tell us about your event</h2>' +
+        topbar +
         '<div class="app">' +
 
           '<div class="lightbox" data-lb>' +

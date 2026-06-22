@@ -66,6 +66,19 @@
 .pvr button, .pvr input, .pvr select, .pvr textarea { font-family: inherit; font-weight: var(--fw); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
+/* ============================ TOP BAR ============================ */
+.pvr .pvr-topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--sp4); margin-bottom: var(--sp6); flex-wrap: wrap; }
+.pvr .pvr-logo { display: inline-flex; align-items: center; color: var(--text); text-decoration: none; transition: color .12s; }
+.pvr .pvr-logo svg { height: 26px; width: auto; display: block; }
+.pvr .pvr-logo:hover { color: var(--text-soft); }
+.pvr .pvr-back {
+  display: inline-flex; align-items: center; gap: 6px; padding: 11px 18px;
+  border: 1px solid var(--border-2); background: transparent; color: var(--text);
+  font-family: var(--font); font-weight: var(--fw-semi); font-size: 14px; text-decoration: none;
+  transition: background .12s, border-color .12s;
+}
+.pvr .pvr-back:hover { background: var(--surface-3); border-color: var(--text-faint); }
+
 /* ============================ LAYOUT ============================ */
 .pvr .app {
   display: grid;
