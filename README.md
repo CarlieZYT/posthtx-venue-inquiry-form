@@ -6,6 +6,14 @@ Temple**. Designed to be embedded in the Webflow `/venuerental` page.
 
 > Flow & UX spec: see [USER-FLOW.md](USER-FLOW.md).
 
+**Live preview:** https://carliezyt.github.io/posthtx-venue-inquiry-form/
+(auto-deploys from `src/` on every push to `main` via `.github/workflows/pages.yml`).
+
+**Deep links:** venue selection is encoded in the URL —
+`?venues=outpost,penthouse,art-club` (order = rank) or `?venues=none`. Opening such
+a link pre-selects those venues. IDs: `office, x-atrium, penthouse, outpost,
+skylawn-room, art-club, jordan-plaza, docks`.
+
 ---
 
 ## What to ship (zip just this)
