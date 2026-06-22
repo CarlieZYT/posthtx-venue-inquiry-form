@@ -55,7 +55,9 @@
 
   width: 100%;
   box-sizing: border-box;
-  padding: 32px;            /* component-owned gutter (so it never touches edges, embed or preview) */
+  /* component-owned margin on all sides; side gutter scales with viewport
+     (no hard max-width) so big screens get real breathing room. */
+  padding: 40px clamp(24px, 6vw, 120px);
   font-family: var(--font);
   font-size: 16px;
   font-weight: var(--fw);
