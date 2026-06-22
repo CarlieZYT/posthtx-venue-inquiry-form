@@ -90,7 +90,7 @@
       var topbar = (opt.showTopBar !== false && backUrl)
         ? '<div class="pvr-topbar">' +
             '<a class="pvr-logo" href="' + esc(backUrl) + '" aria-label="POST Houston">' + POST_LOGO + '</a>' +
-            '<a class="pvr-back" href="' + esc(backUrl) + '">' + esc(copy.backLabel || '← Explore more at POST') + '</a>' +
+            '<a class="pvr-back" href="' + esc(backUrl) + '" target="_blank" rel="noopener">' + esc(copy.backLabel || '← Explore more at POST') + '</a>' +
           '</div>'
         : '';
       root.innerHTML =
