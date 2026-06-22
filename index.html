@@ -3,9 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=src/index.html">
   <link rel="canonical" href="src/index.html">
   <title>POST Venue Rental — Inquiry Form</title>
+  <!-- Forward any deep-link query (?venues=…) + hash through to the app. -->
+  <script>location.replace('src/index.html' + location.search + location.hash);</script>
+  <noscript><meta http-equiv="refresh" content="0; url=src/index.html"></noscript>
 </head>
 <body style="margin:0;background:#0c0c0d;color:#f4f4f5;font-family:sans-serif;padding:40px">
   <p>Redirecting to the <a href="src/index.html" style="color:#2db2eb">inquiry form preview</a>…</p>

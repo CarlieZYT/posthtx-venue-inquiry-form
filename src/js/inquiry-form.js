@@ -167,7 +167,7 @@
       if (!url) { console.error('[PVR] no venues dataSource'); return; }
       fetch(url)
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-        .then(function (data) { venues = (data && data.venues) || []; buildGrid(); })
+        .then(function (data) { venues = (data && data.venues) || []; buildGrid(); applyVenuesFromUrl(); })
         .catch(function (e) {
           el.venueGrid.innerHTML = '<div class="venue-error">Couldn’t load venues. If previewing locally, run a local server (see README) — file:// blocks fetch.</div>';
           console.error('[PVR] venue load failed:', e);
@@ -198,20 +198,51 @@
       else { state.picks.push(id); state.noPreference = false; maybeScrollToBuild(); }
       refreshVenueCards();
       updateSummary();
+      syncVenuesToUrl();
     }
     function setNoPreference() {
       state.noPreference = true;
       state.picks = [];
       refreshVenueCards();
       updateSummary();
+      syncVenuesToUrl();
       maybeScrollToBuild();
     }
     function moveVenue(index, dir) {
       var j = index + dir; if (j < 0 || j >= state.picks.length) return;
       var t = state.picks[index]; state.picks[index] = state.picks[j]; state.picks[j] = t;
-      refreshVenueCards(); updateSummary();
+      refreshVenueCards(); updateSummary(); syncVenuesToUrl();
     }
-    function removeVenueAt(index) { state.picks.splice(index, 1); refreshVenueCards(); updateSummary(); }
+    function removeVenueAt(index) { state.picks.splice(index, 1); refreshVenueCards(); updateSummary(); syncVenuesToUrl(); }
+
+    /* ---- Deep link: ?venues=a,b,c (order = rank) | ?venues=none ---- */
+    // Write the current selection into the URL (no reload, no history spam).
+    function syncVenuesToUrl() {
+      var params = new URLSearchParams(w.location.search);
+      if (state.picks.length) params.set('venues', state.picks.join(','));
+      else if (state.noPreference) params.set('venues', 'none');
+      else params.delete('venues');
+      var qs = params.toString().replace(/%2C/g, ',');   // keep commas readable
+      w.history.replaceState(null, '', w.location.pathname + (qs ? '?' + qs : '') + w.location.hash);
+    }
+    // Pre-select from the URL on load (after venues are available). Validates:
+    // unknown ids skipped, de-duped, capped at MAX_PICKS; 'none' → no preference.
+    function applyVenuesFromUrl() {
+      var raw = new URLSearchParams(w.location.search).get('venues');
+      if (!raw) return;
+      var parts = raw.toLowerCase().split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+      var validIds = [], seen = {};
+      parts.forEach(function (id) {
+        if (id === 'none' || seen[id] || !findVenue(id) || validIds.length >= MAX_PICKS) return;
+        seen[id] = 1; validIds.push(id);
+      });
+      if (validIds.length) { state.picks = validIds; state.noPreference = false; }
+      else if (parts.indexOf('none') !== -1) { state.picks = []; state.noPreference = true; }
+      else return;
+      refreshVenueCards();
+      updateSummary();
+      syncVenuesToUrl();   // normalize the URL (drop unknowns / dupes / overflow)
+    }
 
     function refreshVenueCards() {
       var cards = el.venueGrid.querySelectorAll('.venue-card');
@@ -562,6 +593,7 @@
     function resetAll() {
       state.view = 'step'; state.stepIndex = 0; state.values = {}; state.picks = []; state.noPreference = false; state.leadCaptured = false; state.eventNameTouched = false;
       refreshVenueCards();
+      syncVenuesToUrl();   // clears ?venues=
       showView();
       renderStep();
     }
