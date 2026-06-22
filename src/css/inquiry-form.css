@@ -52,12 +52,12 @@
 
   /* ---- Spacing (4px scale) ---- */
   --sp1: 4px; --sp2: 8px; --sp3: 12px; --sp4: 16px; --sp5: 20px; --sp6: 24px; --sp7: 32px; --sp8: 40px;
+  --gutter: clamp(24px, 6vw, 120px);   /* shared side margin for top bar + app */
 
   width: 100%;
   box-sizing: border-box;
-  /* component-owned margin on all sides; side gutter scales with viewport
-     (no hard max-width) so big screens get real breathing room. */
-  padding: 40px clamp(24px, 6vw, 120px);
+  /* gutter is applied to .pvr-topbar and .app individually (not here), so the
+     app can go full-bleed on phones while the top bar keeps its margin. */
   font-family: var(--font);
   font-size: 16px;
   font-weight: var(--fw);
@@ -71,7 +71,7 @@
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 /* ============================ TOP BAR ============================ */
-.pvr .pvr-topbar { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp3); margin-bottom: var(--sp6); }
+.pvr .pvr-topbar { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp3); margin: 40px 0 var(--sp6); padding: 0 var(--gutter); }
 .pvr .pvr-logo { display: inline-flex; align-items: center; color: var(--text); text-decoration: none; transition: color .12s; }
 .pvr .pvr-logo svg { height: 26px; width: auto; display: block; }
 .pvr .pvr-logo:hover { color: var(--text-soft); }
@@ -89,6 +89,7 @@
   grid-template-columns: minmax(300px, 24%) 1fr minmax(300px, 24%);
   align-items: start;
   gap: var(--sp6);
+  padding: 0 var(--gutter) 40px;   /* own side gutter (aligned with top bar) + bottom margin */
   position: relative;
 }
 .pvr .panel-left,
@@ -298,8 +299,8 @@
   .pvr .q-text { font-size: 26px; }
 }
 @media screen and (max-width: 991px) {
-  .pvr { padding: 16px 16px 84px; }   /* tighter gutter on mobile + room for the sticky bar */
-  .pvr .app { grid-template-columns: 1fr; }
+  .pvr .pvr-topbar { margin-top: 16px; padding: 0 16px; }
+  .pvr .app { grid-template-columns: 1fr; padding: 0 16px 84px; }   /* tighter gutter + room for sticky bar */
   .pvr .panel-left { order: 1; }
   .pvr .panel-mid { order: 2; }
   .pvr .panel-right { order: 3; }
@@ -314,6 +315,7 @@
   .pvr .mobile-bar button:disabled { background: var(--surface-2); border-color: var(--border); color: var(--text-faint); cursor: default; }
 }
 @media screen and (max-width: 600px) {
+  .pvr .app { padding-left: 0; padding-right: 0; }   /* app full-bleed on phones; top bar keeps its 16px margin */
   .pvr .panel-mid { padding: var(--sp5); }
   .pvr .q-text { font-size: 24px; }
   .pvr .venue-grid { grid-template-columns: 1fr 1fr; }
