@@ -1,6 +1,9 @@
 # Internal reference / planning — not for the public repo
 ref/
 
+# Webflow CMS work — kept local, not in the public repo
+webflow/
+
 # OS / editor noise
 .DS_Store
 *.log
